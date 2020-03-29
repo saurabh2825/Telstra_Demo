@@ -10,12 +10,9 @@ import UIKit
 
 enum NetworkURL {
 
-    static let baseUrl             = "https://dl.dropboxusercontent.com/"
-    
-    static let dashboardUrl        = "s/2iodh4vg0eortkl/facts.json"
+    static let baseUrl           = "https://dl.dropboxusercontent.com/"
+    static let dashboardUrl      = "s/2iodh4vg0eortkl/facts.json"
   
-    
-
-    
-    
 }
+
+

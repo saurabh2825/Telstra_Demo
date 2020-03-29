@@ -22,6 +22,8 @@
 		8AA86D57242F618900EC3D29 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D56242F618900EC3D29 /* DashboardViewModel.swift */; };
 		8AA86D59242F625100EC3D29 /* NetworkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D58242F625100EC3D29 /* NetworkURL.swift */; };
 		8AA86D5B242F6A4A00EC3D29 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D5A242F6A4A00EC3D29 /* DashboardTableViewCell.swift */; };
+		8AA86D5E242F7F1700EC3D29 /* LocalData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA86D5D242F7F1700EC3D29 /* LocalData.json */; };
+		8ACA1DF82430BFDA008D79CA /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACA1DF72430BFDA008D79CA /* ImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		8AA86D56242F618900EC3D29 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		8AA86D58242F625100EC3D29 /* NetworkURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkURL.swift; sourceTree = "<group>"; };
 		8AA86D5A242F6A4A00EC3D29 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		8AA86D5D242F7F1700EC3D29 /* LocalData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocalData.json; sourceTree = "<group>"; };
+		8ACA1DF72430BFDA008D79CA /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			children = (
 				8AA86D15242F583800EC3D29 /* AppDelegate.swift */,
 				8AA86D17242F583800EC3D29 /* SceneDelegate.swift */,
+				8AA86D5C242F7EDD00EC3D29 /* Resources */,
 				8AA86D4B242F604B00EC3D29 /* UIHelper */,
 				8AA86D48242F5D9E00EC3D29 /* Utilities */,
 				8AA86D47242F5D8400EC3D29 /* ViewModel */,
@@ -175,6 +180,7 @@
 			children = (
 				8AA86D52242F614400EC3D29 /* NetworkManager.swift */,
 				8AA86D58242F625100EC3D29 /* NetworkURL.swift */,
+				8ACA1DF72430BFDA008D79CA /* ImageManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -189,6 +195,14 @@
 			path = UIHelper;
 			sourceTree = "<group>";
 		};
+		8AA86D5C242F7EDD00EC3D29 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8AA86D5D242F7F1700EC3D29 /* LocalData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +213,7 @@
 				8AA86D0E242F583800EC3D29 /* Sources */,
 				8AA86D0F242F583800EC3D29 /* Frameworks */,
 				8AA86D10242F583800EC3D29 /* Resources */,
+				8A4608E924308112002B3036 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -293,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA86D5E242F7F1700EC3D29 /* LocalData.json in Resources */,
 				8AA86D22242F583D00EC3D29 /* LaunchScreen.storyboard in Resources */,
 				8AA86D1F242F583D00EC3D29 /* Assets.xcassets in Resources */,
 			);
@@ -314,6 +330,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8A4608E924308112002B3036 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8AA86D0E242F583800EC3D29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -322,6 +359,7 @@
 				8AA86D55242F616B00EC3D29 /* DashboardModel.swift in Sources */,
 				8AA86D4D242F608400EC3D29 /* AutoLayoutHelper.swift in Sources */,
 				8AA86D16242F583800EC3D29 /* AppDelegate.swift in Sources */,
+				8ACA1DF82430BFDA008D79CA /* ImageManager.swift in Sources */,
 				8AA86D57242F618900EC3D29 /* DashboardViewModel.swift in Sources */,
 				8AA86D59242F625100EC3D29 /* NetworkURL.swift in Sources */,
 				8AA86D4F242F60AC00EC3D29 /* UIElementsHelper.swift in Sources */,

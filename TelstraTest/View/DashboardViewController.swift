@@ -10,6 +10,9 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     let tableView = UITableView()
+    let viewModel = DashboardViewModel()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -17,8 +20,6 @@ class DashboardViewController: UIViewController {
         // Do any additional setup after loading the view.
         initialSetup()
     }
-    
-    
     /*
      // MARK: - Navigation
      
@@ -37,7 +38,8 @@ class DashboardViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(DashboardTableViewCell.self, forCellReuseIdentifier: "cell")
-        setUpTableView()
+         setUpTableView()
+         getDatatoDisplayInTable()
         
     }
     
@@ -50,23 +52,28 @@ class DashboardViewController: UIViewController {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         
     }
-    
+  
+    func getDatatoDisplayInTable() {
+        self.viewModel.getDashboardData(successBlock: {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }) { (error) in
+        }
+    }
 }
 
 extension DashboardViewController:UITableViewDelegate,UITableViewDataSource{
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+      return self.viewModel.getRequirdTableRow()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DashboardTableViewCell
+        cell.configureCellData(model:self.viewModel.getCellDataforIndexPath(indexNumber: indexPath.row))
+       
+        return cell
     }
-    
-    
-    
-    
-    
 }

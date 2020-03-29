@@ -23,10 +23,8 @@ class AutoLayoutHelper: NSObject {
         view.superview?.addConstraint(constraint)
         return constraint
     }
-   
     @discardableResult
     static func addTrailingSpaceConstraintToView(_ view: UIView, trailingSpace space: CGFloat, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
-        
         let constraint = NSLayoutConstraint(item: view,
                                             attribute: .trailing,
                                             relatedBy: relation,
@@ -40,7 +38,6 @@ class AutoLayoutHelper: NSObject {
    
     @discardableResult
     static func addTopSpaceConstraintToView(_ view: UIView, topSpace space: CGFloat, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
-        
         let constraint = NSLayoutConstraint(item: view,
                                             attribute: .top,
                                             relatedBy: relation,
@@ -48,7 +45,6 @@ class AutoLayoutHelper: NSObject {
                                             attribute: .top,
                                             multiplier: 1,
                                             constant: space)
-        
         view.superview?.addConstraint(constraint)
         return constraint
     }
@@ -66,10 +62,8 @@ class AutoLayoutHelper: NSObject {
         view.superview?.addConstraint(constraint)
         return constraint
     }
-    
     @discardableResult
-    static func addVerticalSpaceConstraintBetweenViews(_ topView: UIView, bottomView: UIView,   verticalSpace  space: CGFloat, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
-        
+    static func addVerticalSpaceConstraintBetweenViews(_ topView: UIView, bottomView: UIView,verticalSpace  space: CGFloat, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(item: bottomView,
                                             attribute: .top,
                                             relatedBy: relation,
@@ -77,9 +71,48 @@ class AutoLayoutHelper: NSObject {
                                             attribute: .bottom,
                                             multiplier: 1,
                                             constant: space)
-        
         bottomView.superview?.addConstraint(constraint)
         return constraint
     }
+
+ @discardableResult
+static func addVerticalAlignConstraintToView(_ view: UIView, withCenterOffset offset: CGFloat, priority:UILayoutPriority) -> NSLayoutConstraint {
+        
+        let constraint = NSLayoutConstraint(item: view, attribute: .centerY, relatedBy: .equal, toItem: view.superview, attribute: .centerY, multiplier: 1, constant: offset)
+        constraint.priority = priority
+        view.superview?.addConstraint(constraint)
+        return constraint
+    }
     
+@discardableResult
+static func addWidthConstraintToView(_ view: UIView, relation: NSLayoutConstraint.Relation = .equal, value: CGFloat, priority:UILayoutPriority=UILayoutPriority.required) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: view, attribute: .width, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: value)
+        constraint.priority = priority
+        view.addConstraint(constraint)
+        return constraint
+    }
+    
+@discardableResult
+static func addHeightConstraintToView(_ view: UIView, relation: NSLayoutConstraint.Relation = .equal, value: CGFloat, priority:UILayoutPriority=UILayoutPriority.required) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: view, attribute: .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: value)
+        constraint.priority = priority
+        view.addConstraint(constraint)
+        return constraint
+    }
+
+
+  @discardableResult
+  static func addHorizontalSpaceConstraintBetweenViews(_ leftView: UIView, rightView: UIView,   horizontalSpace  space: CGFloat, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
+      
+      let constraint = NSLayoutConstraint(item: rightView,
+                                          attribute: .left,
+                                          relatedBy: relation,
+                                          toItem: leftView,
+                                          attribute: .right,
+                                          multiplier: 1,
+                                          constant: space)
+      rightView.superview?.addConstraint(constraint)
+      return constraint
+  }
+
 }
