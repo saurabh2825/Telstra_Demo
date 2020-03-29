@@ -13,8 +13,8 @@ class DashboardViewModel: NSObject {
     var dashboardData: DashboardModel?
 
     func getDashboardData(successBlock: @escaping () -> Void, failureBlock: @escaping (Error?) -> Void) {
-     
-      NetworkManager.sharedManager.callService(urlString: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", completionBlock: { (responseData) in
+      let urlString = NetworkURL.baseUrl + NetworkURL.dashboardUrl
+      NetworkManager.sharedManager.callService(urlString: urlString, completionBlock: { (responseData) in
           if let dataString = String(data: responseData, encoding: .isoLatin1){
             if let data = dataString.data(using: .utf8){
               do {
@@ -31,12 +31,16 @@ class DashboardViewModel: NSObject {
             failureBlock(error)
         }
     }
-func getCellDataforIndexPath(indexNumber:Int) -> Rows {
+ func getCellDataforIndexPath(indexNumber:Int) -> Rows {
         return (dashboardData?.rows?[indexNumber])!
    }
   
-func getRequirdTableRow() -> Int {
+ func getRequirdTableRow() -> Int {
     return dashboardData?.rows?.count ?? 0
   }
-    
+
+  func setNavigationTitle() -> String {
+    return dashboardData?.title ?? ""
+  }
+
 }

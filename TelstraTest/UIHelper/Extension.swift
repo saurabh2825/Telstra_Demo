@@ -8,3 +8,17 @@
 
 import UIKit
 
+extension UIImageView {
+
+func loadImagesfromURL(urlString:String)  {
+    URLSession.shared.dataTask( with: NSURL(string:urlString)! as URL, completionHandler: {
+       (data, response, error) -> Void in
+       DispatchQueue.main.async {
+          if let data = data {
+             self.image = UIImage(data: data)
+          }
+       }
+    }).resume()
+  
+}
+}

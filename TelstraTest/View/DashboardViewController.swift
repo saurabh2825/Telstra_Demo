@@ -11,6 +11,8 @@ import UIKit
 class DashboardViewController: UIViewController {
     let tableView = UITableView()
     let viewModel = DashboardViewModel()
+    var pullToRefresh: UIRefreshControl!
+    var activityIndicatore: UIActivityIndicatorView!
 
     
     override func viewDidLoad() {
@@ -35,9 +37,13 @@ class DashboardViewController: UIViewController {
         self.view.addSubview(self.tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(DashboardTableViewCell.self, forCellReuseIdentifier: "cell")
+        pullToRefresh = UIRefreshControl()
+        pullToRefresh.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+        pullToRefresh.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+       self.tableView.addSubview(pullToRefresh)
          setUpTableView()
          getDatatoDisplayInTable()
         
@@ -55,12 +61,25 @@ class DashboardViewController: UIViewController {
   
     func getDatatoDisplayInTable() {
         self.viewModel.getDashboardData(successBlock: {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+          self.updateUI()
         }) { (error) in
         }
     }
+
+  @objc func refreshTableView(_ sender : UIRefreshControl){
+         getDatatoDisplayInTable()
+     }
+
+  func updateUI(){
+      DispatchQueue.main.async {
+          weak var weakself = self
+        weakself?.navigationItem.title = self.viewModel.setNavigationTitle()
+        weakself?.tableView.reloadData()
+        weakself?.pullToRefresh.endRefreshing()
+      }
+  }
+  
+
 }
 
 extension DashboardViewController:UITableViewDelegate,UITableViewDataSource{
@@ -72,8 +91,7 @@ extension DashboardViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DashboardTableViewCell
-        cell.configureCellData(model:self.viewModel.getCellDataforIndexPath(indexNumber: indexPath.row))
-       
+      cell.configureCellData(model:self.viewModel.getCellDataforIndexPath(indexNumber: indexPath.row))
         return cell
     }
 }
