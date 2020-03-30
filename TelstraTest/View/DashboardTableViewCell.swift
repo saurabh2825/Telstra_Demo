@@ -65,7 +65,6 @@ class DashboardTableViewCell: UITableViewCell {
     AutoLayoutHelper.addBottomSpaceConstraintToView(descriptionLabel, bottomSpace: -8,relation: .equal)
     descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
     
-    
     AutoLayoutHelper.addTrailingSpaceConstraintToView(imageview, trailingSpace: 8)
     AutoLayoutHelper.addHeightConstraintToView(imageview, value: 50)
     AutoLayoutHelper.addWidthConstraintToView(imageview, value: 70)

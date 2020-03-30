@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A4F3C852431C62E00385349 /* DashboardViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F3C842431C62E00385349 /* DashboardViewControllerTest.swift */; };
+		8A4F3C872431C64D00385349 /* DashboardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F3C862431C64D00385349 /* DashboardViewModelTest.swift */; };
 		8AA86D16242F583800EC3D29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D15242F583800EC3D29 /* AppDelegate.swift */; };
 		8AA86D18242F583800EC3D29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D17242F583800EC3D29 /* SceneDelegate.swift */; };
 		8AA86D1F242F583D00EC3D29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA86D1E242F583D00EC3D29 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A4F3C842431C62E00385349 /* DashboardViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewControllerTest.swift; sourceTree = "<group>"; };
+		8A4F3C862431C64D00385349 /* DashboardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelTest.swift; sourceTree = "<group>"; };
 		8AA86D12242F583800EC3D29 /* TelstraTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelstraTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA86D15242F583800EC3D29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA86D17242F583800EC3D29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				8AA86D2C242F583D00EC3D29 /* TelstraTestTests.swift */,
+				8A4F3C842431C62E00385349 /* DashboardViewControllerTest.swift */,
+				8A4F3C862431C64D00385349 /* DashboardViewModelTest.swift */,
 				8AA86D2E242F583D00EC3D29 /* Info.plist */,
 			);
 			path = TelstraTestTests;
@@ -375,7 +381,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4F3C872431C64D00385349 /* DashboardViewModelTest.swift in Sources */,
 				8AA86D2D242F583D00EC3D29 /* TelstraTestTests.swift in Sources */,
+				8A4F3C852431C62E00385349 /* DashboardViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
