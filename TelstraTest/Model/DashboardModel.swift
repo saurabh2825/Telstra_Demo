@@ -9,16 +9,12 @@
 import UIKit
 
 struct DashboardModel:Codable {
-    
     let title:String?
     let rows:[Rows]?
 }
 
 struct Rows:Codable {
-   
     let title:String?
     let description:String?
     let imageHref:String?
 }
-
-

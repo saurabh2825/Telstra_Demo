@@ -17,7 +17,6 @@
 		8AA86D38242F583D00EC3D29 /* TelstraTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D37242F583D00EC3D29 /* TelstraTestUITests.swift */; };
 		8AA86D4A242F5E1100EC3D29 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D49242F5E1100EC3D29 /* DashboardViewController.swift */; };
 		8AA86D4D242F608400EC3D29 /* AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D4C242F608400EC3D29 /* AutoLayoutHelper.swift */; };
-		8AA86D4F242F60AC00EC3D29 /* UIElementsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D4E242F60AB00EC3D29 /* UIElementsHelper.swift */; };
 		8AA86D51242F610600EC3D29 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D50242F610600EC3D29 /* Extension.swift */; };
 		8AA86D53242F614400EC3D29 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D52242F614400EC3D29 /* NetworkManager.swift */; };
 		8AA86D55242F616B00EC3D29 /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D54242F616B00EC3D29 /* DashboardModel.swift */; };
@@ -25,7 +24,7 @@
 		8AA86D59242F625100EC3D29 /* NetworkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D58242F625100EC3D29 /* NetworkURL.swift */; };
 		8AA86D5B242F6A4A00EC3D29 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA86D5A242F6A4A00EC3D29 /* DashboardTableViewCell.swift */; };
 		8AA86D5E242F7F1700EC3D29 /* LocalData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA86D5D242F7F1700EC3D29 /* LocalData.json */; };
-		8ACA1DF82430BFDA008D79CA /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACA1DF72430BFDA008D79CA /* ImageManager.swift */; };
+		8ACD09D124325BB300CD9A3E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACD09D024325BB300CD9A3E /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		8AA86D39242F583D00EC3D29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AA86D49242F5E1100EC3D29 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		8AA86D4C242F608400EC3D29 /* AutoLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutHelper.swift; sourceTree = "<group>"; };
-		8AA86D4E242F60AB00EC3D29 /* UIElementsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementsHelper.swift; sourceTree = "<group>"; };
 		8AA86D50242F610600EC3D29 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8AA86D52242F614400EC3D29 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8AA86D54242F616B00EC3D29 /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
@@ -70,7 +68,7 @@
 		8AA86D58242F625100EC3D29 /* NetworkURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkURL.swift; sourceTree = "<group>"; };
 		8AA86D5A242F6A4A00EC3D29 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		8AA86D5D242F7F1700EC3D29 /* LocalData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocalData.json; sourceTree = "<group>"; };
-		8ACA1DF72430BFDA008D79CA /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		8ACD09D024325BB300CD9A3E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +184,7 @@
 			children = (
 				8AA86D52242F614400EC3D29 /* NetworkManager.swift */,
 				8AA86D58242F625100EC3D29 /* NetworkURL.swift */,
-				8ACA1DF72430BFDA008D79CA /* ImageManager.swift */,
+				8ACD09D024325BB300CD9A3E /* Reachability.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				8AA86D4C242F608400EC3D29 /* AutoLayoutHelper.swift */,
-				8AA86D4E242F60AB00EC3D29 /* UIElementsHelper.swift */,
 				8AA86D50242F610600EC3D29 /* Extension.swift */,
 			);
 			path = UIHelper;
@@ -365,12 +362,11 @@
 				8AA86D55242F616B00EC3D29 /* DashboardModel.swift in Sources */,
 				8AA86D4D242F608400EC3D29 /* AutoLayoutHelper.swift in Sources */,
 				8AA86D16242F583800EC3D29 /* AppDelegate.swift in Sources */,
-				8ACA1DF82430BFDA008D79CA /* ImageManager.swift in Sources */,
 				8AA86D57242F618900EC3D29 /* DashboardViewModel.swift in Sources */,
 				8AA86D59242F625100EC3D29 /* NetworkURL.swift in Sources */,
-				8AA86D4F242F60AC00EC3D29 /* UIElementsHelper.swift in Sources */,
 				8AA86D53242F614400EC3D29 /* NetworkManager.swift in Sources */,
 				8AA86D51242F610600EC3D29 /* Extension.swift in Sources */,
+				8ACD09D124325BB300CD9A3E /* Reachability.swift in Sources */,
 				8AA86D4A242F5E1100EC3D29 /* DashboardViewController.swift in Sources */,
 				8AA86D5B242F6A4A00EC3D29 /* DashboardTableViewCell.swift in Sources */,
 				8AA86D18242F583800EC3D29 /* SceneDelegate.swift in Sources */,
@@ -542,6 +538,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TelstraTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,6 +556,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TelstraTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
