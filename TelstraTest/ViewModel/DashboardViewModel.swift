@@ -35,7 +35,7 @@ class DashboardViewModel: NSObject {
   }
   //Return dashboard data model based on indexpath
   func getCellDataforIndexPath(indexNumber:Int) -> Rows {
-    return (dashboardData?.rows?[indexNumber])!
+    return ((dashboardData?.rows?[indexNumber])!)
   }
   // Return total data count need to show in table
   func getRequirdTableRow() -> Int {
@@ -45,5 +45,30 @@ class DashboardViewModel: NSObject {
   func setNavigationTitle() -> String {
     return dashboardData?.title ?? ""
   }
+  
+}
+// This is for testing purposr
+extension DashboardViewModel{
+  func callServiceForTest(completionBlock: @escaping (_ response: Data) -> Void, failureBlock: @escaping (Error?) -> Void) {
+          if let path = Bundle.main.path(forResource: "LocalData", ofType: "json") {
+              let url = URL(fileURLWithPath: path)
+              let session = URLSession.shared
+              let task = session.dataTask(with: url) { (data, response, error) in
+                  if let data = data {
+                      completionBlock(data)
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode(DashboardModel.self, from: data)
+                        self.dashboardData = data
+                    } catch {
+                    }
+                    
+                  } else {
+                      failureBlock(error)
+                  }
+              }
+              task.resume()
+          }
+      }
   
 }

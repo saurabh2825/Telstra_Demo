@@ -10,43 +10,26 @@ import XCTest
 @testable import TelstraTest
 
 class DashboardViewModelTest: XCTestCase {
-  var viewModel: DashboardViewModel?
+  var viewModel = DashboardViewModel()
   var model:DashboardModel?
   
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    
-      self.callService(completionBlock: { (responseData) in
-        
+      
+      // Put setup code here. This method is called before the invocation of each test method in the class.
+      viewModel.callServiceForTest(completionBlock: { (responseData) in
         do {
             let decoder = JSONDecoder()
             let data = try decoder.decode(DashboardModel.self, from: responseData)
             self.model = data
-            
+           XCTAssertNotNil(self.model)
+         
         } catch {
-            
         }
       }) { (error) in
-        
       }
   }
   
   
-   func callService(completionBlock: @escaping (_ response: Data) -> Void, failureBlock: @escaping (Error?) -> Void) {
-         if let path = Bundle.main.path(forResource: "LocalData", ofType: "json") {
-             let url = URL(fileURLWithPath: path)
-             let session = URLSession.shared
-             let task = session.dataTask(with: url) { (data, response, error) in
-                 if let data = data {
-                     completionBlock(data)
-                 } else {
-                     failureBlock(error)
-                 }
-             }
-             task.resume()
-         }
-     }
-
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -63,21 +46,21 @@ class DashboardViewModelTest: XCTestCase {
         }
     }
 
-  func testgetCellDataForIndecPath() {
-    
+  func testNavigationTitel() {
+    if(self.model != nil){
+      XCTAssertEqual(self.model?.title, "About Canada")
+    }
   }
-  func testRequiredTableRow()  {
-    
+  
+  func testNumberofRow() {
+    if(self.model != nil){
+      XCTAssertEqual(self.viewModel.getRequirdTableRow(),14)
+    }
+  }
+  func testgetModelforIndex() {
+    if(self.model != nil){
+      XCTAssertNil(self.viewModel.getCellDataforIndexPath(indexNumber: 2))
+    }
+  }
 
-  }
-  
-  func testnavgationTitleTest()  {
-   
-    
-    
-  }
-
-  
-  
-  
 }
