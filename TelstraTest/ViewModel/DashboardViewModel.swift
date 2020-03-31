@@ -55,14 +55,13 @@ extension DashboardViewModel{
               let session = URLSession.shared
               let task = session.dataTask(with: url) { (data, response, error) in
                   if let data = data {
-                      completionBlock(data)
                     do {
                         let decoder = JSONDecoder()
                         let data = try decoder.decode(DashboardModel.self, from: data)
                         self.dashboardData = data
                     } catch {
                     }
-                    
+                    completionBlock(data)
                   } else {
                       failureBlock(error)
                   }
